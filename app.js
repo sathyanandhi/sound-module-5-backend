@@ -15,10 +15,12 @@ const DashboardRouter = require("./src/routers/Dashboard.route");
 
 // cors Middleware
 // Allow requests from your React frontend
+// Allow both common Vite ports
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173', 'http://localhost:5174'],
   credentials: true
 }));
+
 
 //App Level middleware
 app.use(logger("dev"));
